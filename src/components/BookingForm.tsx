@@ -87,6 +87,28 @@ const BookingForm: React.FC = () => {
 
       if (error) throw error;
 
+      // Send email notification to admin
+      try {
+        const emailResponse = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-booking-email`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            total_amount: totalAmount
+          }),
+        });
+        
+        if (!emailResponse.ok) {
+          console.warn('Failed to send email notification');
+        }
+      } catch (emailError) {
+        console.warn('Email notification error:', emailError);
+        // Don't fail the booking if email fails
+      }
+
       setSubmitStatus('success');
       // Reset form
       setFormData({
