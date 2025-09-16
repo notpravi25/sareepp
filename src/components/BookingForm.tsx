@@ -21,7 +21,7 @@ const BookingForm: React.FC = () => {
     email: '',
     address: '',
     number_of_sarees: 1,
-    services: ['pre-pleating'],
+    services: [],
     preferred_date: '',
     preferred_time: '',
     special_instructions: ''
@@ -32,8 +32,8 @@ const BookingForm: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const serviceOptions = [
-    { id: 'pre-pleating', label: 'Pre-Pleating and box folding DESIGNER SAREE', price: 499 },
-    { id: 'pre-pleating', label: 'Pre-Pleating and box folding NORMAL SAREE', price: 299 },
+    { id: 'pre-pleating-designer', label: 'Pre-Pleating and box folding DESIGNER SAREE', price: 499 },
+    { id: 'pre-pleating-normal', label: 'Pre-Pleating and box folding NORMAL SAREE', price: 299 },
     { id: 'ironing', label: 'Saree Ironing', price: 50 },
     { id: 'doorstep-service', label: 'Doorstep Service (Contact for pricing)', price: 0 }
   ];
@@ -95,7 +95,7 @@ const BookingForm: React.FC = () => {
         email: '',
         address: '',
         number_of_sarees: 1,
-        services: ['pre-pleating'],
+        services: [],
         preferred_date: '',
         preferred_time: '',
         special_instructions: ''
