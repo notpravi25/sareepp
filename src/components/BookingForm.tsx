@@ -35,7 +35,7 @@ const BookingForm: React.FC = () => {
     { id: 'pre-pleating', label: 'Pre-Pleating and box folding DESIGNER SAREE', price: 499 },
     { id: 'pre-pleating', label: 'Pre-Pleating and box folding NORMAL SAREE', price: 299 },
     { id: 'ironing', label: 'Saree Ironing', price: 50 },
-    { id: 'doorstep-service', label: 'Doorstep Service', CONTACT US VIA PHONE NUMBER }
+    { id: 'doorstep-service', label: 'Doorstep Service (Contact for pricing)', price: 0 }
   ];
 
   const timeSlots = [
